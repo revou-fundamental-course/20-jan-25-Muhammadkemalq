@@ -1,12 +1,31 @@
 // Get DOM elements
 const bmiForm = document.getElementById('bmiForm');
 const resultDiv = document.getElementById('result');
+const resetButton = document.getElementById('resetButton');
 
 // Add form submit event listener
 bmiForm.addEventListener('submit', function(e) {
     e.preventDefault();
     calculateBMI();
 });
+
+// Add reset button event listener
+resetButton.addEventListener('click', resetCalculator);
+
+/**
+ * Reset the calculator form and hide results
+ */
+function resetCalculator() {
+    // Reset form fields
+    bmiForm.reset();
+    
+    // Hide result div
+    resultDiv.className = 'result';
+    resultDiv.innerHTML = '';
+    
+    // Set focus to first input
+    document.getElementById('gender').focus();
+}
 
 /**
  * Calculate BMI and display results

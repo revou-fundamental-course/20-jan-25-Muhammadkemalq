@@ -45,20 +45,40 @@ input, select {
     font-size: 16px;
 }
 
-button {
-    background-color: #3498db;
-    color: white;
+/* Button styles */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-calculate, .btn-reset {
+    flex: 1;
     padding: 12px 24px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 100%;
     font-size: 16px;
     transition: background-color 0.3s;
 }
 
-button:hover {
+.btn-calculate {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-calculate:hover {
     background-color: #2980b9;
+}
+
+.btn-reset {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn-reset:hover {
+    background-color: #c0392b;
 }
 
 .result {
@@ -123,5 +143,9 @@ button:hover {
 @media (max-width: 600px) {
     .container {
         padding: 15px;
+    }
+    
+    .button-group {
+        flex-direction: column;
     }
 }
